@@ -21,7 +21,7 @@ $container['view'] = function ($c) {
 
 // Flash messages
 $container['flash'] = function ($c) {
-    return new \Slim\Flash\Messages;
+    return new \Slim\Flash\Messages();
 };
 
 // PDO
@@ -50,7 +50,7 @@ $container['mailer'] = function ($c) {
 $container['csrf'] = function ($c) {
     $guard = new \Slim\Csrf\Guard();
     $guard->setFailureCallable(function ($request, $response, $next) {
-        $request = $request->withAttribute("csrf_status", false);
+        $request = $request->withAttribute('csrf_status', false);
 
         return $next($request, $response);
     });

@@ -32,6 +32,6 @@ abstract class AbstractController
             ->setFrom(['noreply@matcha.com' => 'Matcha Admin'])
             ->setTo([$user->getEmail() => $user->getUsername()])
             ->setBody($content)
-            ->setContentType("text/html");
+            ->setContentType('text/html');
     }
 }
